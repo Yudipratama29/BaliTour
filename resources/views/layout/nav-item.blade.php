@@ -1,8 +1,5 @@
-<!-- nav-item.blade.php -->
-<ul class="nav">
-    <li><a href="{{ route('home') }}">Home</a></li>
-    <li><a href="{{ route('tour') }}">Tour</a></li>
-    <li><a href="{{ route('villa') }}">Villa</a></li>
-    <li><a href="{{ route('aktivitas') }}">Aktivitas</a></li>
-    <li><a href="{{ route('booking') }}">Booking</a></li>
-</ul>
+<a href="{{ route('home') }}">Home</a>
+<a href="{{ route('tour') }}">Tours</a>
+<a href="{{ route('aktivitas') }}">Aktivitas</a>
+<a href="{{ route('villa') }}">Villa</a>
+<a href="{{ route('booking') }}">Booking</a>
