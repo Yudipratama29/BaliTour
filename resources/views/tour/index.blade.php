@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+@extends('layout.master')
+
 <html>
 <head>
     <title>BaliTour</title>

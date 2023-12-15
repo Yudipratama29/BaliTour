@@ -22,7 +22,10 @@ Route::get('/', function () {
     return view('home.index');
 })->name('home');
 
-Route::get('/tour', [TourController::class, 'index'])->name('tour.index');
+Route::get('/tour', function () {
+    return view('tour.index');
+})->name('tour');
+
 
 Route::get('/aktivitas', 'AktivitasController@index')->name('aktivitas');
 
