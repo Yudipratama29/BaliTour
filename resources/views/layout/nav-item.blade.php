@@ -1,5 +1,3 @@
-<a href="{{ route('home') }}">Home</a>
-<a href="{{ route('tour') }}">Tours</a>
-<a href="{{ route('aktivitas') }}">Aktivitas</a>
-<a href="{{ route('villa') }}">Villa</a>
-<a href="{{ route('booking') }}">Booking</a>
+<li class="nav-item"><a href="{{ url($menu['url']) }}"
+    class="nav-link {{ request()->is($menu['url'] . '*') ? 'active' : '' }}">{{ $menu['name'] }}</a></li>
+

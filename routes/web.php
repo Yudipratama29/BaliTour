@@ -32,3 +32,4 @@ Route::get('/aktivitas', 'AktivitasController@index')->name('aktivitas');
 Route::get('/villa', 'VillaController@index')->name('villa');
 
 Route::get('/booking', 'BookingController@index')->name('booking');
+
