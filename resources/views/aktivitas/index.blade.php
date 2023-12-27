@@ -34,7 +34,7 @@
                             <td>{{ $d->detail }}</td>
                             <td>{{ $d->harga }}</td>
                             <td class="float-end">
-                                <a class="btn btn-sm btn-success" href="{{ url('/destination/show' . $d->iddst ) }}">Detail</a>
+                                <a class="btn btn-sm btn-success" href="{{ url('/destination/show' . $d->idakt ) }}">Detail</a>
                             </td>
                         </tr>
                     @endforeach
