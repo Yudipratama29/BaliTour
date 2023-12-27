@@ -1,7 +1,10 @@
 <?php
 
-
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TourController;
+use App\Http\Controllers\AktivitasController;
+use App\Http\Controllers\VillaController;
+use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +18,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('home.index');
+})->name('home');
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/tour', function () {
+    return view('tour.index');
+})->name('tour');
+
+
+Route::get('/aktivitas', 'AktivitasController@index')->name('aktivitas');
+
+Route::get('/villa', 'VillaController@index')->name('villa');
+
+Route::get('/booking', 'BookingController@index')->name('booking');
+
