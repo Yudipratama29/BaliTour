@@ -22,10 +22,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/', function () {
+    Route::get('/home', function () {
         return view('home.index');
     })->name('home');
 
@@ -45,4 +45,4 @@ Route::middleware(['auth'])->group(function () {
         return view('book.index');
     })->name('book');
 
-}
+});

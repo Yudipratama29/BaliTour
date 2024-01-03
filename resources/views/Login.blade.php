@@ -80,7 +80,19 @@
             <div class="login-box-body">
                 <p class="login-box-msg">Silahkan login</p>
 
-                <form role="form" method="post" action="/home">
+ 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+                <form role="form" method="post" action="/login">
+                    @csrf
                     <div class="form-group has-feedback">
                         <input type="email" class="form-control" placeholder="Email" name="email" autofocus>
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
