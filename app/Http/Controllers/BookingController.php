@@ -8,6 +8,10 @@ class BookingController extends Controller
 {
     public function index()
     {
-        return view('booking.index');
+        $book = DB::table('book')
+        ->select("book.idbook", "book.name", "book.detail", "book.harga")
+        ->get();
+
+        return view('book.index', ['databook' => $book]);
     }
 }

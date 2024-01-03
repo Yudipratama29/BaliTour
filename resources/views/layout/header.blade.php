@@ -50,7 +50,7 @@
 
         .search-box {
             display: flex;
-            align-items: center;
+            align-items: right;
         }
 
         .search-box input {
@@ -71,12 +71,12 @@
 
 <header class="navbar navbar-expand-lg bg-body-tertiary py-1 mb-5 border-bottom">
     <nav class="navbar bg-body">
-        <div class="container-fluid">
+        <div class="container fluid">
             <a class="" href="/">
                 <img src="https://github.com/Yudipratama29/BaliTour/blob/main/Img/Logo/Logo%20PNG.png?raw=true" alt="Logo">
             </a>
             <a>
-                Bali Tour
+                BaliTour
             </a>
             <ul class="nav nav-underline ml-auto">
                 <li class="nav-item">
@@ -96,8 +96,6 @@
         </div>
     </nav>
 </header>
-
-<!-- Isi halaman web lainnya -->
 
 </body>
 </html>

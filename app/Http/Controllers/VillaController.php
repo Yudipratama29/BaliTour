@@ -8,6 +8,10 @@ class VillaController extends Controller
 {
     public function index()
     {
-        return view('villa.index');
+        $villa = DB::table('villa')
+        ->select("villa.idvilla", "villa.name", "villa.detail", "villa.harga")
+        ->get();
+
+        return view('villa.index', ['datavilla' => $villa]);
     }
 }

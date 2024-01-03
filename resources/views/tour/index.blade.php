@@ -1,46 +1,38 @@
-<!DOCTYPE html>
-
 @extends('layout.master')
 
-<html>
-<head>
-    <title>BaliTour</title>
-    <style>
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-            width: 40%;
-            float: left;
-            margin: 2%;
-        }
+@section('title', 'Tour')
 
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        }
+@section('breadcrumb')
+    <li class="breadcrumb-item active">Tour</li>
+@endsection
 
-        .container {
-            padding: 2px 16px;
-        }
-    </style>
-</head>
+@section('content')
 <body>
-
-    <img src="logo_anda.jpg" alt="Logo" class="float-left" style="width: 50px; height: auto;">
-
-    @foreach($tours as $tour)
     <div class="card">
-        <img src="{{ $tour->foto }}" alt="{{ $tour->nama }}" style="width:100%">
-        <div class="container">
-            <h4><b>{{ $tour->nama }}</b></h4>
-            <p>{{ substr($tour->deskripsi, 0, 50) }}...</p>
-            <p>Harga: Rp. {{ number_format($tour->harga) }}</p>
+        <div class="card-header">
+            <div class="row">
+                <div class="col-10">
+                    <h4 class="card-title">Tour</h4>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID Tour</th>
+                        <th scope="col">Tour List</th>
+                        <th scope="col">Detail Tour</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
-    @endforeach
-
-    <div class="footer">
-        <p>&copy; 2023 BaliTour. All rights reserved.</p>
-    </div>
-
 </body>
-</html>
+<div class="container card footer">
+    <p>&copy; 2023 BaliTour. All rights reserved.</p>
+</div>
+@endsection
+

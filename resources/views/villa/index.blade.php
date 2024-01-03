@@ -1,9 +1,9 @@
 @extends('layout.master')
 
-@section('title', 'Aktivitas')
+@section('title', 'Villa')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item active">Aktivitas</li>
+    <li class="breadcrumb-item active">Villa</li>
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-10">
-                    <h4 class="card-title">Aktivitas</h4>
+                    <h4 class="card-title">Villa</h4>
                 </div>
             </div>
         </div>
@@ -20,9 +20,9 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">ID Aktivitas</th>
-                        <th scope="col">Aktivitas List</th>
-                        <th scope="col">Detail Aktivitas</th>
+                        <th scope="col">ID Villa</th>
+                        <th scope="col">Villa List</th>
+                        <th scope="col">Detail Villa</th>
                         <th scope="col">Harga</th>
                         <th scope="col"></th>
                     </tr>
