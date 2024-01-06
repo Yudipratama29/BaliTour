@@ -27,6 +27,19 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
+                <tbody>
+                    @foreach ($datatour as $d)
+                    <tr>
+                        <td>{{ $d->idtour }}</td>
+                        <td>{{ $d->tourlist }}</td>
+                        <td>{{ $d->detailtour }}</td>
+                        <td>{{ $d->harga }}</td>
+                        <td class="float-end">
+                            <a class=btn btn-sm btn-success" href="{{ url('/tour/show' . $d->idtour ) }}">Show</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>

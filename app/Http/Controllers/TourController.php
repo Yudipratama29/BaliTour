@@ -9,7 +9,10 @@ class TourController extends Controller
 {
     public function index()
     {
-        $tours = Tour::all();
-        return view('tour.index', compact('tours'));
+        $tours = DB::table('tour')
+        ->select("tour.idtour", "tour.tourlist", "tour.detailtour", "tour.harga")
+        ->get();
+        
+        return view('tour.index', ['datatour' => $tours]);
     }
 }

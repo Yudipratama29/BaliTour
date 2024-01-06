@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('tour', function (Blueprint $table) {
             $table->id();
+            $table->string('idtour')->unique();
+            $table->string('tourlist');
+            $table->string('detailtour');
+            $table->string('harga');
             $table->timestamps();
         });
     }
