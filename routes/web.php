@@ -25,24 +25,50 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/home', function () {
-        return view('home.index');
-    })->name('home');
+Route::controller(TourController::class)->prefix("tour")->group(function () {
+    Route::get('/', 'index');
+    Route::get('/{tour}', 'show');
+});
 
-    Route::get('/tour', function () {
-        return view('tour.index');
-    })->name('tour');
+Route::controller(AktivitasController::class)->prefix("aktivitas")->group(function(){
+    Route::get('/', 'index');
+    Route::post('/', 'store');
+    Route::get('/create', 'create');
+    Route::get('/{id}', 'show');
+    Route::put('/{id}', 'update');
+    Route::delete('/{id}', 'destroy');
+    Route::get('/{id}/edit', 'edit');
+});
 
-    Route::get('/aktivitas', function () {
-        return view('aktivitas.index');
-    })->name('aktivitias');
+Route::controller(VillaController::class)->prefix("villa")->group(function(){
+    Route::get('/', 'index');
+    Route::post('/', 'store');
+    Route::get('/create', 'create');
+    Route::get('/{id}', 'show');
+    Route::put('/{id}', 'update');
+    Route::delete('/{id}', 'destroy');
+    Route::get('/{id}/edit', 'edit');
+});
 
-    Route::get('/villa', function () {
-        return view('villa.index');
-    })->name('villa');
 
-    Route::get('/book', function () {
-        return view('book.index');
-    })->name('book');
+    // Route::get('/home', function () {
+    //     return view('home.index');
+    // })->name('home');
+
+    // Route::get('/tour', function () {
+    //     return view('tour.index');
+    // })->name('tour');
+
+    // Route::get('/aktivitas', function () {
+    //     return view('aktivitas.index');
+    // })->name('aktivitias');
+
+    // Route::get('/villa', function () {
+    //     return view('villa.index');
+    // })->name('villa');
+
+    // Route::get('/book', function () {
+    //     return view('book.index');
+    // })->name('book');
 
 });

@@ -52,7 +52,7 @@
     </style>
 
         <h2>Welcome, Travelers</h2>
-        <h5>Traveloke is a website where you can book tourist attractions, you can even book drivers or transportation which can be done easily, with just one click your travel problems will be helped easily.</h5>
+        <h5>BaliTour is a website where you can book tourist attractions, you can even book drivers or transportation which can be done easily, with just one click your travel problems will be helped easily.</h5>
 
     <div class="container text-center">
         <div class="row">

@@ -27,6 +27,17 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
+                @foreach ($datavilla as $d)
+                    <tr>
+                        <td>{{ $d->idvilla }}</td>
+                        <td>{{ $d->name }}</td>
+                        <td>{{ $d->detail }}</td>
+                        <td>{{ $d->harga }}</td>
+                        <td class="float-end">
+                            <a class="btn btn-sm btn-success" href="{{ url('aktivitas/show')}}">Show</a>
+                        </td>
+                    </tr>
+                @endforeach
             </table>
         </div>
     </div>
