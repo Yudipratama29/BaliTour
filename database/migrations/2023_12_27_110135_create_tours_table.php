@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,12 +10,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tour', function (Blueprint $table) {
+        Schema::create('tours', function (Blueprint $table) {
             $table->id();
-            $table->string('idtour')->unique();
-            $table->string('tourlist');
-            $table->string('detailtour');
-            $table->string('harga');
+            $table->string('tour_list'); // Tambahkan kolom untuk Tour List
+            $table->text('detail'); // Tambahkan kolom untuk Detail Tour
+            $table->decimal('harga', 10, 2); // Tambahkan kolom untuk Harga
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tour');
+        Schema::dropIfExists('tours');
     }
 };

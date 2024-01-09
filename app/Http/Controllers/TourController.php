@@ -7,10 +7,25 @@ use Illuminate\Http\Request;
 
 class TourController extends Controller
 {
-    public function index(request $request)
+    public function index()
     {
-        $datatour = Tour::with('tour')->get();
+        $tours = Tour::all();
+        return view('tour.index', compact('tours'));
+    }
 
-        return view('tour.index', ['tour' => $datatour]);
+    public function show($id)
+    {
+        // Ambil data tour berdasarkan ID
+        $tour = Tour::find($id);
+
+        // Periksa apakah tour ditemukan
+        if (!$tour) {
+            // Jika tidak ditemukan, redirect atau tampilkan pesan kesalahan
+            // Sesuaikan sesuai kebutuhan aplikasi Anda
+            return redirect()->route('tour.index')->with('error', 'Tour not found');
+        }
+
+        // Tampilkan halaman detail tour
+        return view('tour.show', compact('tour'));
     }
 }
