@@ -7,12 +7,11 @@
 @endsection
 
 @section('content')
-<body>
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col-10">
-                    <h4 class="card-title">Tour</h4>
+                <div class="col-12">
+                    <h4 class="card-title text-center">List of Tours</h4>
                 </div>
             </div>
         </div>
@@ -20,19 +19,34 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">ID Tour</th>
-                        <th scope="col">Tour List</th>
-                        <th scope="col">Detail Tour</th>
-                        <th scope="col">Harga</th>
-                        <th scope="col"></th>
+                        <th>ID</th>
+                        <th>Tour List</th>
+                        <th>Detail Tour</th>
+                        <th>Harga</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
+                <tbody>
+                    @forelse ($tours as $tour)
+                        <tr class="align-middle">
+                            <td>{{ $tour->id }}</td>
+                            <td>{{ $tour->tour_list }}</td>
+                            <td>{{ Str::limit($tour->detail, 200) }}</td>
+                            <td>{{ $tour->harga }}</td>
+                            <td>
+                                <a href="{{ route('tour.show', ['id' => $tour->id]) }}" class="btn btn-primary">Details</a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="5">No tours available.</td>
+                        </tr>
+                    @endforelse
+                </tbody>
             </table>
         </div>
     </div>
-</body>
-<div class="container card footer">
-    <p>&copy; 2023 BaliTour. All rights reserved.</p>
-</div>
+    <div class="container card footer text-center">
+        <p>&copy; 2023 BaliTour. All rights reserved.</p>
+    </div>
 @endsection
-

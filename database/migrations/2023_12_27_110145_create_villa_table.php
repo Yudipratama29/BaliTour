@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateVillaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('villa', function (Blueprint $table) {
             $table->id();
+            $table->string('villa_name');
+            $table->text('villa_description');
+            $table->decimal('villa_price', 10, 2);
+            // tambahkan kolom-kolom lain yang sesuai
+
             $table->timestamps();
         });
     }
@@ -24,4 +29,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('villa');
     }
-};
+}
