@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,18 +11,13 @@
         }
 
         header {
-            background-color: #f8f9fa; /* Sesuaikan warna latar belakang sesuai kebutuhan */
-        }
-
-        .navbar {
-            border-bottom: 1px solid #ababab; /* Sesuaikan warna garis bawah sesuai kebutuhan */
-        }
-
-        .container-fluid {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ababab;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem;
+            position: relative;
         }
 
         .navbar img {
@@ -32,9 +26,9 @@
         }
 
         .navbar a {
-            margin-left: 10px; /* Sesuaikan margin-left sesuai kebutuhan */
+            margin-left: 10px;
             text-decoration: none;
-            color: black; /* Sesuaikan warna teks sesuai kebutuhan */
+            color: black;
         }
 
         .nav-underline {
@@ -45,21 +39,25 @@
         }
 
         .nav-item {
-            margin-right: 15px; /* Sesuaikan margin-right sesuai kebutuhan */
+            margin-right: 15px;
         }
 
         .search-box {
+            position: absolute;
+            top: 0;
+            right: 0;
             display: flex;
-            align-items: right;
+            align-items: center;
+            margin-top: 10px;
         }
 
         .search-box input {
-            margin-right: 5px; /* Sesuaikan margin-right sesuai kebutuhan */
+            margin-right: 5px;
         }
 
         .search-box button {
-            background-color: #007bff; /* Sesuaikan warna latar belakang sesuai kebutuhan */
-            color: #fff; /* Sesuaikan warna teks sesuai kebutuhan */
+            background-color: #007bff;
+            color: #fff;
             border: none;
             padding: 8px 12px;
             border-radius: 4px;
@@ -69,34 +67,29 @@
 </head>
 <body>
 
-<header class="navbar navbar-expand-lg bg-body-tertiary py-1 mb-5 border-bottom">
-    <nav class="navbar bg-body">
-        <div class="container fluid">
-            <a class="" href="/">
-                <img src="https://github.com/Yudipratama29/BaliTour/blob/main/Img/Logo/Logo%20PNG.png?raw=true" alt="Logo">
-            </a>
-            <a>
-                BaliTour
-            </a>
-            <ul class="nav nav-underline ml-auto">
-                <li class="nav-item">
-                    @php
-                        $menu = [['url' => '/home', 'name' => 'Home'], ['url' => 'tour', 'name' => 'Tour'], ['url' => 'aktivitas', 'name' => 'Aktivitas'],['url' => 'villa', 'name' => 'Villa'], ['url' => 'book', 'name' => 'Book']];
-                    @endphp
-            
-                    @foreach ($menu as $m)
-                        @include('layout.nav-item', ['menu' => $m])
-                    @endforeach
-                </li>
-            </ul>
-            <div class="search-box ml-auto">
-                <input type="text" placeholder="Cari...">
-                <button type="button">Cari</button>
-            </div>
+    <header class="navbar navbar-expand-lg bg-body-tertiary py-1 mb-5 border-bottom">
+        <a class="" href="/">
+            <img src="https://github.com/Yudipratama29/BaliTour/blob/main/Img/Logo/Logo%20PNG.png?raw=true" alt="Logo">
+        </a>
+        <a>
+            BaliTour
+        </a>
+        <ul class="nav nav-underline ml-auto">
+            <li class="nav-item">
+                @php
+                    $menu = [['url' => '/home', 'name' => 'Home'], ['url' => 'tour', 'name' => 'Tour'], ['url' => 'aktivitas', 'name' => 'Aktivitas'],['url' => 'villa', 'name' => 'Villa'], ['url' => 'book', 'name' => 'Book']];
+                @endphp
+
+                @foreach ($menu as $m)
+                    @include('layout.nav-item', ['menu' => $m])
+                @endforeach
+            </li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="Cari...">
+            <button type="button">Cari</button>
         </div>
-    </nav>
-</header>
+    </header>
 
 </body>
 </html>
-
