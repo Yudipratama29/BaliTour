@@ -19,3 +19,6 @@ class AktivitasController extends Controller
         return view('aktivitas.show', compact('aktivitas'));
     }
 }
+
+
+

@@ -50,3 +50,4 @@
         <p>&copy; 2023 BaliTour. All rights reserved.</p>
     </div>
 @endsection
+
