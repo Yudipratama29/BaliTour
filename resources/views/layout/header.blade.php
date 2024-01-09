@@ -55,13 +55,18 @@
             margin-right: 5px;
         }
 
-        .search-box button {
+        .search-box button,
+        .logout-button {
             background-color: #007bff;
             color: #fff;
             border: none;
             padding: 8px 12px;
             border-radius: 4px;
             cursor: pointer;
+        }
+
+        .logout-button {
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -88,6 +93,7 @@
         <div class="search-box">
             <input type="text" placeholder="Cari...">
             <button type="button">Cari</button>
+            <button class="logout-button" type="button">Logout</button>
         </div>
     </header>
 
