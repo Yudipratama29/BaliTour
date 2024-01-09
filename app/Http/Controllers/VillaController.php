@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Villa;
 use Illuminate\Http\Request;
 
 class VillaController extends Controller
 {
     public function index()
     {
-        $villa = DB::table('villa')
-        ->select("villa.idvilla", "villa.name", "villa.detail", "villa.harga")
-        ->get();
+        $villas = Villa::all();
+        return view('villa.index', compact('villas'));
+    }
 
-        return view('villa.index', ['datavilla' => $villa]);
+    public function show($id)
+    {
+        $villa = Villa::find($id);
+        return view('villa.show', compact('villa'));
     }
 }

@@ -1,37 +1,24 @@
 @extends('layout.master')
 
-@section('title', 'Details Aktivitas')
-
-@section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ url('/aktivitas') }}">Aktivitas</a></li>
-    <li class="breadcrumb-item active">Show</li>
-@endsection
+@section('title', 'Aktivitas Detail')
 
 @section('content')
     <div class="card">
-        <style>
-            .card{
-                border: 1px;
-                padding: 20px;
-                margin: 20px;
-                border-radius: 8px;
-            }
-
-        </style>
         <div class="card-header">
+            <h4 class="card-title">Aktivitas Detail</h4>
+        </div>
+        <div class="card-body">
             <div class="row">
-                <h4 class="card-title">Details akttivitas</h4>
+                <div class="col-md-6">
+                    <strong>ID Aktivitas:</strong> {{ $aktivitas->id }}<br>
+                    <strong>Aktivitas Name:</strong> {{ $aktivitas->aktivitas_name }}<br>
+                    <strong>Deskripsi Aktivitas:</strong> {{ $aktivitas->aktivitas_description }}<br>
+                    <strong>Harga:</strong> {{ $aktivitas->aktivitas_price }}<br>
+                </div>
             </div>
         </div>
-        <div class="card-body">
-            <p class="card-text">ID                  : {{$dataaktivitas->idakt}}</p>
-            <p class="card-text">Nama Aktivitas      : {{$dataaktivitas->name}}</p>
-            <p class="card-text">Detail              : {{$dataaktivitas->detail}}</p>
-            <p class="card-text">Harga               : {{$dataaktivitas->harga}}</p>
-        </div>
-        <div class="card-body">
-            <a class="btn btn-sm btn-danger" href="{{ url('/aktivitas/') }}">Back</a>
-            <a class="btn btn-sm btn-success" href="{{ url('/')}}">Home</a>
-        </div>
+    </div>
+    <div class="container card footer">
+        <p>&copy; 2023 BaliTour. All rights reserved.</p>
     </div>
 @endsection

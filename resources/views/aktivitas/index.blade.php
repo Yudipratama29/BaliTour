@@ -2,50 +2,43 @@
 
 @section('title', 'Aktivitas')
 
-@section('breadcrumb')
-    <li class="breadcrumb-item active">Aktivitas</li>
-@endsection
-
 @section('content')
-    <body>
-        <div class="card">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-10">
-                        <h4 class="card-title">Aktivitas</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID Aktivitas</th>
-                            <th scope="col">Aktivitas List</th>
-                            <th scope="col">Detail Aktivitas</th>
-                            <th scope="col">Harga</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <body>
-                        @foreach ($dataaktivitas as $d)
-                            <tr>
-                                <td>{{ $d->idakt }}</td>
-                                <td>{{ $d->name }}</td>
-                                <td>{{ $d->detail }}</td>
-                                <td>{{ $d->harga }}</td>
-                                <td class="float-end">
-                                    <a class="btn btn-sm btn-success" href="{{ url('aktivitas/show')}}">Show</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </body>
-                </table>
-            </div>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title text-center">List of Aktivitas</h4>
         </div>
-    </body>
-    <div class="container card footer">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Aktivitas Name</th>
+                        <th>Deskripsi Aktivitas</th>
+                        <th>Harga</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($aktivitasList as $item)
+                    <tr class="align-middle">
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->aktivitas_name }}</td>
+                        <td>{{ Str::limit($item->aktivitas_description, 200) }}</td>
+                        <td>{{ $item->aktivitas_price }}</td>
+                        <td>
+                            <a href="{{ route('aktivitas.show', ['id' => $item->id]) }}" class="btn btn-primary">Details</a>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="5">No Aktivitas available.</td>
+                    </tr>
+                @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container card footer text-center">
         <p>&copy; 2023 BaliTour. All rights reserved.</p>
     </div>
 @endsection
-
