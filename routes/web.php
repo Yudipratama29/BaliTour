@@ -26,8 +26,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/villa/{id}', [VillaController::class, 'show'])->name('villa.show');
     
 
-    Route::get('/book', function () {
-        return view('book.index');
-    })->name('book');
+    Route::resource('book', BookingController::class);
 
 });
