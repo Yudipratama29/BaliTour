@@ -5,7 +5,7 @@
 @section('title', 'Create Booking')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ route('bookings.index') }}">Booking</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('booking.index') }}">Booking</a></li>
     <li class="breadcrumb-item active">Create</li>
 @endsection
 
@@ -15,7 +15,7 @@
             <h4 class="card-title">Create Booking</h4>
         </div>
         <div class="card-body">
-            <form action="{{ route('bookings.store') }}" method="POST">
+            <form action="{{ route('booking.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="booking_list">Booking List</label>
@@ -35,3 +35,5 @@
         </div>
     </div>
 @endsection
+
+

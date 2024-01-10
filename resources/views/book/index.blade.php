@@ -15,7 +15,7 @@
                     <h4 class="card-title">Booking</h4>
                 </div>
                 <div class="col-2 text-right">
-                    <a href="{{ route('book.create') }}" class="btn btn-primary">Create</a>
+                    <a href="{{ route('booking.create') }}" class="btn btn-primary">Create</a>
                 </div>
             </div>
         </div>

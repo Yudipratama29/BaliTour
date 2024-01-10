@@ -82,7 +82,7 @@
         <ul class="nav nav-underline ml-auto">
             <li class="nav-item">
                 @php
-                    $menu = [['url' => '/home', 'name' => 'Home'], ['url' => 'tour', 'name' => 'Tour'], ['url' => 'aktivitas', 'name' => 'Aktivitas'],['url' => 'villa', 'name' => 'Villa'], ['url' => 'book', 'name' => 'Book']];
+                    $menu = [['url' => '/home', 'name' => 'Home'], ['url' => 'tour', 'name' => 'Tour'], ['url' => 'aktivitas', 'name' => 'Aktivitas'],['url' => 'villa', 'name' => 'Villa'], ['url' => 'booking', 'name' => 'Book']];
                 @endphp
 
                 @foreach ($menu as $m)

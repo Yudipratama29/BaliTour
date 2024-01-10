@@ -26,6 +26,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/villa/{id}', [VillaController::class, 'show'])->name('villa.show');
     
 
-    Route::resource('book', BookingController::class);
+    Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
+    Route::get('/booking/create', [BookingController::class, 'create'])->name('booking.create');
+    Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
+
 
 });
