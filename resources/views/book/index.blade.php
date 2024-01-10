@@ -24,6 +24,7 @@
                 <thead>
                     <tr>
                         <th scope="col">ID Booking</th>
+                        <th scope="col">Booking Type</th>
                         <th scope="col">Booking List</th>
                         <th scope="col">Detail Booking</th>
                         <th scope="col">Harga</th>
